@@ -1,9 +1,9 @@
-# Your Name Here
+# Koen Myers
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section:
-# Sources, people worked with, help given to:
+# 11/6/2024
+# Lab 08
+# Lab Section: 15
+# Sources, people worked with, help given to: Google, "how to make something a float in python" 11/5/2024
 # your
 # comments
 # here
@@ -13,6 +13,14 @@
 # If they can't be converted return false
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
+
+def check_numbers(string):
+    if string == int(string):
+        string = int(string)
+    elif string == float(string):
+        string== float(string)
+    else:
+        print("False")
 
 
 print("*" * 75)
@@ -37,6 +45,13 @@ print("*" * 75)
 # Exit on the word exit
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
+
+while True:
+    m=input("Input Slope=")
+    b=input("Y intercept=")
+    lower=input('Lower Bound=')
+    upper=input('Upper Bound=')
+    
 
 print("*" * 75)
 
