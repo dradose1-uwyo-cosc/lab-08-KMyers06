@@ -3,7 +3,8 @@
 # 11/6/2024
 # Lab 08
 # Lab Section: 15
-# Sources, people worked with, help given to: Google, "how to make something a float in python" 11/5/2024
+# Sources, people worked with, help given to: (Google, "how to make something a float in python" 11/5/2024), 
+#(https://www.w3schools.com/python/ref_string_count.asp, "how to count how many decibels are in a string python", 11/6/2024)
 # your
 # comments
 # here
@@ -14,14 +15,14 @@
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
-def check_numbers(string):
-    if string == int(string):
-        string = int(string)
-    elif string == float(string):
-        string== float(string)
+def check_numbers(strin):
+    """How to check a number"""
+    if "." in strin:
+        return float(strin)
+    elif strin.isdigit():
+        return int(strin)
     else:
-        print("False")
-
+        return False
 
 print("*" * 75)
 
@@ -46,12 +47,52 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
+def slope_intercept(z,f,low,upp):
+    end_value=[]
+    if low >= upp:
+        return print('Invalid Inputs')
+    for x in range(low, upp + 1):
+        y=z*x+f
+        end_value.append(y)
+    return end_value
+
 while True:
-    m=input("Input Slope=")
-    b=input("Y intercept=")
-    lower=input('Lower Bound=')
-    upper=input('Upper Bound=')
-    
+    numbers_give=input("Input values for Line (m b lower upper)= ")
+    if numbers_give.lower() == "exit":
+        break
+    m=0
+    b=0
+    lower=0
+    upper=0
+    numbers=numbers_give.split()
+    if len(numbers) != 4:
+        print("Invalid Inputs")
+        continue
+    ms= numbers[0]
+    bs=numbers[1]
+    lowers=numbers[2]
+    uppers=numbers[3]
+    if check_numbers(ms) != False:
+        m=check_numbers(ms)
+    else:
+        print('Invalid Input')
+        break
+    if check_numbers(bs) != False:
+        b=check_numbers(bs)
+    else:
+        print('Invalid Input')
+        break
+    if check_numbers(lowers) != False:
+        lower=check_numbers(lowers)
+    else:
+        print('Invalid Input')
+        break
+    if check_numbers(uppers) != False:
+        upper=check_numbers(uppers)
+    else:
+        print('Invalid Input')
+        break
+    print(slope_intercept(m,b,lower,upper))
 
 print("*" * 75)
 
