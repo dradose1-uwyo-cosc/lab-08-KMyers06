@@ -17,7 +17,7 @@
 
 def check_numbers(strin):
     """How to check a number"""
-    if "." in strin:
+    if strin.count(".")==1:
         return float(strin)
     elif strin.isdigit():
         return int(strin)
@@ -67,7 +67,7 @@ while True:
     numbers=numbers_give.split()
     if len(numbers) != 4:
         print("Invalid Inputs")
-        continue
+        break
     ms= numbers[0]
     bs=numbers[1]
     lowers=numbers[2]
@@ -84,11 +84,17 @@ while True:
         break
     if check_numbers(lowers) != False:
         lower=check_numbers(lowers)
+        if lower != int(lower):
+            print('Invalid Lower Bound Input')
+            break
     else:
         print('Invalid Input')
         break
     if check_numbers(uppers) != False:
         upper=check_numbers(uppers)
+        if upper != int(upper):
+            print('Invalid Upper Bound')
+            break
     else:
         print('Invalid Input')
         break
@@ -106,13 +112,17 @@ print("*" * 75)
     # If the number you are trying to take the square root of is negative, return null
 def quad_formula(e,f,g):
     un_root=f**2-4*e*g
-    root=un_root**1/2
+    if un_root <0:
+        return False
+    else:
+        root=un_root**1/2
     x1top=-f+root
     x2top=-f-root
     bot=2*e
     x1=x1top/bot
     x2=x2top/bot
     print(f"Results: {x1}, {x2}")
+    return True
     
     
 
@@ -145,4 +155,6 @@ while True:
     else:
         print("invalid Input")
         break 
-    quad_formula(a,b,c)
+    if not quad_formula(a,b,c):
+        print('Negative Numbers in square root')
+        break
