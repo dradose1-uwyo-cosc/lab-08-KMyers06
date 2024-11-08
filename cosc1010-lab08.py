@@ -4,7 +4,7 @@
 # Lab 08
 # Lab Section: 15
 # Sources, people worked with, help given to: (Google, "how to make something a float in python" 11/5/2024), 
-#(https://www.w3schools.com/python/ref_string_count.asp, "how to count how many decibels are in a string python", 11/6/2024)
+#(https://www.w3schools.com/python/ref_string_count.asp, "how to count how many decibels are in a string python", 11/6/2024), Jack Z, Proffesor Radosevich
 # your
 # comments
 # here
